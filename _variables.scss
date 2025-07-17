@@ -1,0 +1,36 @@
+/*
+File: neuropharm/brand/paragon/_variables.scss
+Description: SASS variables for the MFE Brand Package.
+*/
+
+// 1. FONT IMPORTS (must be in fonts.scss, but defining variables here)
+$font-family-sans-serif: 'Roboto', sans-serif;
+$headings-font-family: 'Cormorant Garamond', serif;
+
+// 2. COLOR PALETTE
+// These override the default Bootstrap variables used by Paragon.
+$primary: #4F81BD; // Neuropharm Blue
+$secondary: #493728; // Neuropharm Dark Brown
+$success: #5A9367;
+$info: #4F81BD;
+$warning: #E4A025;
+$danger: #C0504D;
+$light: #FDF5E6; // Neuropharm Parchment
+$dark: #493728; // Neuropharm Dark Brown
+
+// 3. BRAND-SPECIFIC COLORS
+$brand-primary: #C55A11; // Neuropharm Orange for primary actions
+
+// 4. BODY & TEXT
+$body-bg: $light;
+$body-color: $dark;
+
+// 5. HEADINGS
+$headings-color: $dark;
+$headings-font-weight: 700;
+
+// 6. LINKS & BUTTONS
+$link-color: $primary;
+$link-hover-color: darken($link-color, 15%);
+$btn-primary-bg: $brand-primary;
+$btn-primary-border: $brand-primary;
