@@ -1,10 +1,18 @@
+
 {
-  "name": "@neuropharm/brand",
+  "name": "@openedx/brand",
   "version": "1.0.0",
   "description": "MFE Brand Package for Neuropharm Academy",
   "main": "paragon/_variables.scss",
   "keywords": [
     "openedx",
     "brand"
+  ],
+  "files": [ # <-- Good practice to add this, if not already there
+    "assets/",
+    "js/",
+    "paragon/",
+    "favicon.ico",
+    "logo.svg"
   ]
 }
