@@ -1,0 +1,171 @@
+
+// --- STYLES FOR GLOBAL HEADER & FOOTER ---
+
+.global-header {
+    background: var(--card-bg);
+    border-bottom: 1px solid var(--border-color);
+    padding: 0.75rem 0;
+    box-shadow: 0 1px 3px var(--shadow-color);
+}
+
+.global-header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.brand-logo {
+    height: 40px;
+    width: auto;
+}
+
+.primary-nav .nav-link {
+    margin: 0 0.75rem;
+    font-size: 1rem;
+}
+
+.footer-wrapper, .footer-wrapper-mfe {
+    background: var(--dark-wood);
+    color: var(--dark-text);
+    padding: 2rem 0;
+    margin-top: 4rem;
+    border-top: 2px solid var(--brand-brass);
+}
+
+.footer-wrapper .container, .footer-wrapper-mfe .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.footer-nav a {
+    color: var(--dark-text);
+    text-decoration: none;
+    margin-right: 1.5rem;
+    opacity: 0.8;
+    transition: opacity 0.2s ease;
+}
+
+.footer-nav a:hover {
+    opacity: 1;
+}
+
+.copyright {
+    opacity: 0.7;
+    font-size: 0.9rem;
+}
+
+// --- STYLES FOR GLOBAL HEADER & FOOTER ---
+
+.global-header {
+    background: var(--card-bg);
+    border-bottom: 1px solid var(--border-color);
+    padding: 0.75rem 0;
+    box-shadow: 0 1px 3px var(--shadow-color);
+}
+
+.global-header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.brand-logo {
+    height: 40px;
+    width: auto;
+}
+
+.primary-nav .nav-link {
+    margin: 0 0.75rem;
+    font-size: 1rem;
+}
+
+.footer-wrapper, .footer-wrapper-mfe {
+    background: var(--dark-wood);
+    color: var(--dark-text);
+    padding: 2rem 0;
+    margin-top: 4rem;
+    border-top: 2px solid var(--brand-brass);
+}
+
+.footer-wrapper .container, .footer-wrapper-mfe .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.footer-nav a {
+    color: var(--dark-text);
+    text-decoration: none;
+    margin-right: 1.5rem;
+    opacity: 0.8;
+    transition: opacity 0.2s ease;
+}
+
+.footer-nav a:hover {
+    opacity: 1;
+}
+
+.copyright {
+    opacity: 0.7;
+    font-size: 0.9rem;
+}
+
+// --- STYLES FOR GLOBAL HEADER & FOOTER ---
+
+.global-header {
+    background: var(--card-bg);
+    border-bottom: 1px solid var(--border-color);
+    padding: 0.75rem 0;
+    box-shadow: 0 1px 3px var(--shadow-color);
+}
+
+.global-header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.brand-logo {
+    height: 40px;
+    width: auto;
+}
+
+.primary-nav .nav-link {
+    margin: 0 0.75rem;
+    font-size: 1rem;
+}
+
+.footer-wrapper, .footer-wrapper-mfe {
+    background: var(--dark-wood);
+    color: var(--dark-text);
+    padding: 2rem 0;
+    margin-top: 4rem;
+    border-top: 2px solid var(--brand-brass);
+}
+
+.footer-wrapper .container, .footer-wrapper-mfe .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.footer-nav a {
+    color: var(--dark-text);
+    text-decoration: none;
+    margin-right: 1.5rem;
+    opacity: 0.8;
+    transition: opacity 0.2s ease;
+}
+
+.footer-nav a:hover {
+    opacity: 1;
+}
+
+.copyright {
+    opacity: 0.7;
+    font-size: 0.9rem;
+}

@@ -1,0 +1,20 @@
+<svg width="200" height="50" viewBox="0 0 200 50" xmlns="http://www.w3.org/2000/svg">
+  <style>
+    /* Default fills, will be overridden by CSS */
+    .logo-primary { fill: #B8860B; }
+    .logo-secondary { fill: #8B0000; }
+    .logo-accent { fill: #CD853F; }
+    .logo-text {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 28px;
+      font-weight: 700;
+      fill: #493728;
+    }
+  </style>
+  <g class="logo-mark">
+    <path class="logo-primary" d="M10 40 L10 10 L30 30 L30 40 Z" />
+    <path class="logo-secondary" d="M30 10 L30 20 L10 40 L10 30 Z" />
+    <circle class="logo-accent" cx="20" cy="25" r="3" />
+  </g>
+  <text x="45" y="35" class="logo-text">Neuropharm</text>
+</svg>
