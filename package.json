@@ -1,0 +1,10 @@
+{
+  "name": "@neuropharm/brand",
+  "version": "1.0.0",
+  "description": "MFE Brand Package for Neuropharm Academy",
+  "main": "paragon/_variables.scss",
+  "keywords": [
+    "openedx",
+    "brand"
+  ]
+}
