@@ -8,7 +8,7 @@
     "openedx",
     "brand"
   ],
-  "files": [ # <-- Good practice to add this, if not already there
+  "files": [ 
     "assets/",
     "js/",
     "paragon/",
