@@ -1,116 +1,317 @@
+/*
+File: neuropharm/brand/paragon/_overrides.scss
+Description: Custom overrides for exclusive library aesthetic with light/dark mode support
+Theme: Rich textures, brass accents, aged parchment feel
+Features: Responsive light and dark modes
+*/
 
-// --- STYLES FOR GLOBAL HEADER & FOOTER ---
+// LIGHT/DARK MODE MIXIN
+@mixin theme-mode($mode: 'light') {
+  @if $mode == 'light' {
+    --body-bg: #{$light-parchment};
+    --body-color: #{$light-text};
+    --text-muted: #{$light-muted};
+    --border-color: #{$light-border};
+    --shadow-color: #{$light-shadow};
+    --card-bg: #{$light-vellum};
+    --logo-filter: none;
+  } @else if $mode == 'dark' {
+    --body-bg: #{$dark-library};
+    --body-color: #{$dark-text};
+    --text-muted: #{$dark-muted};
+    --border-color: #{$dark-border};
+    --shadow-color: #{$dark-shadow};
+    --card-bg: #{$dark-wood};
+    --logo-filter: brightness(0.9) contrast(1.1);
+  }
+}
 
-.global-header {
+// ROOT VARIABLES - Default to light mode
+:root {
+  @include theme-mode('light');
+}
+
+// DARK MODE ACTIVATION
+@media (prefers-color-scheme: dark) {
+  :root {
+    @include theme-mode('dark');
+  }
+}
+
+// Manual dark mode override
+[data-theme="dark"] {
+  @include theme-mode('dark');
+}
+
+[data-theme="light"] {
+  @include theme-mode('light');
+}
+
+// 1. GLOBAL BODY STYLING - Adaptive parchment texture
+body {
+    background-color: var(--body-bg);
+    color: var(--body-color);
+    background-image:
+        radial-gradient(circle at 20% 50%, rgba(184, 134, 11, 0.02) 0%, transparent 50%),
+        radial-gradient(circle at 80% 20%, rgba(139, 69, 19, 0.02) 0%, transparent 50%),
+        radial-gradient(circle at 40% 80%, rgba(107, 68, 35, 0.02) 0%, transparent 50%);
+    background-attachment: fixed;
+    letter-spacing: 0.3px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+// 2. HEADING STYLES - Elegant serif with brass accents
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    position: relative;
+    color: var(--body-color);
+    text-shadow: 0 1px 2px var(--shadow-color);
+    transition: color 0.3s ease;
+
+    &::after {
+        content: '';
+        position: absolute;
+        bottom: -4px;
+        left: 0;
+        width: 3rem;
+        height: 1px;
+        background: linear-gradient(90deg, #{$brand-brass}, transparent);
+    }
+}
+
+h1::after {
+    width: 4rem;
+    height: 2px;
+}
+
+h2::after {
+    width: 3.5rem;
+}
+
+// 3. CARD STYLING - Adaptive aged parchment
+.card {
     background: var(--card-bg);
-    border-bottom: 1px solid var(--border-color);
-    padding: 0.75rem 0;
-    box-shadow: 0 1px 3px var(--shadow-color);
+    border: 1px solid var(--border-color);
+    box-shadow: 0 2px 8px var(--shadow-color), inset 0 1px 0 rgba(255, 255, 255, 0.1);
+    transition: all 0.3s ease;
+
+    &::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 1px;
+        background: linear-gradient(90deg, transparent, rgba(184, 134, 11, 0.3), transparent);
+    }
+
+    .card-header {
+        background: linear-gradient(135deg, rgba(184, 134, 11, 0.1), rgba(139, 69, 19, 0.05));
+        border-bottom: 1px solid var(--border-color);
+        color: #{$brand-mahogany};
+        font-weight: 600;
+        transition: all 0.3s ease;
+    }
 }
 
-.global-header .container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+// 4. BUTTON STYLING - Brass and copper with aged effects
+.btn {
+    border-radius: 0.125rem;
+    font-weight: 500;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    font-size: 0.875rem;
+    transition: all 0.2s ease;
+
+    &:hover {
+        transform: translateY(-1px);
+        box-shadow: 0 4px 12px rgba(47, 27, 20, 0.2);
+    }
 }
 
-.brand-logo {
-    height: 40px;
-    width: auto;
+.btn-primary {
+    background: linear-gradient(135deg, #B8860B 0%, #CD853F 100%);
+    border: 1px solid #B8860B;
+    color: #F5F5DC;
+
+    &:hover {
+        background: linear-gradient(135deg, #A0750A 0%, #B8860B 100%);
+    }
 }
 
-.primary-nav .nav-link {
-    margin: 0 0.75rem;
-    font-size: 1rem;
+.btn-secondary {
+    background: linear-gradient(135deg, #8B4513 0%, #A0522D 100%);
+    border: 1px solid #8B4513;
+    color: #F5F5DC;
+
+    &:hover {
+        background: linear-gradient(135deg, #7A3F12 0%, #8B4513 100%);
+    }
 }
 
-.footer-wrapper, .footer-wrapper-mfe {
-    background: var(--dark-wood);
-    color: var(--dark-text);
-    padding: 2rem 0;
-    margin-top: 4rem;
-    border-top: 2px solid var(--brand-brass);
+// 5. NAVIGATION - Library catalog aesthetic
+.nav-link {
+    color: #8B4513;
+    font-weight: 500;
+    border-bottom: 2px solid transparent;
+    transition: all 0.2s ease;
+
+    &:hover {
+        color: #B8860B;
+        border-bottom-color: rgba(184, 134, 11, 0.3);
+    }
+
+    &.active {
+        color: #B8860B;
+        border-bottom-color: #B8860B;
+    }
 }
 
-.footer-wrapper .container, .footer-wrapper-mfe .container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    flex-wrap: wrap;
+// 6. TABLES - Academic reference style
+.table {
+    background: rgba(253, 245, 230, 0.5);
+
+    th {
+        background: linear-gradient(135deg, rgba(184, 134, 11, 0.1), rgba(139, 69, 19, 0.05));
+        border-bottom: 2px solid rgba(101, 67, 33, 0.2);
+        color: #8B4513;
+        font-weight: 600;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+        font-size: 0.875rem;
+    }
+
+    td {
+        border-bottom: 1px solid rgba(101, 67, 33, 0.1);
+    }
 }
 
-.footer-nav a {
-    color: var(--dark-text);
-    text-decoration: none;
-    margin-right: 1.5rem;
-    opacity: 0.8;
-    transition: opacity 0.2s ease;
-}
-
-.footer-nav a:hover {
-    opacity: 1;
-}
-
-.copyright {
-    opacity: 0.7;
-    font-size: 0.9rem;
-}
-
-// --- STYLES FOR GLOBAL HEADER & FOOTER ---
-
-.global-header {
+// 4. FORM INPUTS - Adaptive parchment feel
+.form-control {
     background: var(--card-bg);
-    border-bottom: 1px solid var(--border-color);
-    padding: 0.75rem 0;
-    box-shadow: 0 1px 3px var(--shadow-color);
+    border: 1px solid var(--border-color);
+    color: var(--body-color);
+    transition: all 0.3s ease;
+
+    &:focus {
+        background: var(--card-bg);
+        border-color: #{$brand-brass};
+        box-shadow: 0 0 0 0.2rem rgba(184, 134, 11, 0.1);
+    }
+
+    &::placeholder {
+        color: var(--text-muted);
+    }
 }
 
-.global-header .container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
+// 5. LOGO STYLING - Mode-adaptive
+.logo,
 .brand-logo {
-    height: 40px;
-    width: auto;
+    filter: var(--logo-filter);
+    transition: filter 0.3s ease;
+    
+    // Light mode logo
+    [data-theme="light"] & {
+        .logo-primary { fill: #{$brand-brass}; }
+        .logo-secondary { fill: #{$brand-mahogany}; }
+        .logo-accent { fill: #{$brand-copper}; }
+        .logo-text { fill: #{$light-text}; }
+    }
+    
+    // Dark mode logo
+    [data-theme="dark"] & {
+        .logo-primary { fill: #{$brand-brass}; }
+        .logo-secondary { fill: #{$brand-copper}; }
+        .logo-accent { fill: #{$dark-text}; }
+        .logo-text { fill: #{$dark-text}; }
+    }
 }
 
-.primary-nav .nav-link {
-    margin: 0 0.75rem;
-    font-size: 1rem;
+// 6. DARK MODE TOGGLE BUTTON
+.theme-toggle {
+    background: transparent;
+    border: 1px solid var(--border-color);
+    color: var(--body-color);
+    padding: 0.5rem;
+    border-radius: 0.25rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+
+    &:hover {
+        background: rgba(184, 134, 11, 0.1);
+        border-color: #{$brand-brass};
+    }
+
+    .icon-sun { display: none; }
+    .icon-moon { display: inline; }
+    
+    [data-theme="dark"] & {
+        .icon-sun { display: inline; }
+        .icon-moon { display: none; }
+    }
 }
 
-.footer-wrapper, .footer-wrapper-mfe {
-    background: var(--dark-wood);
-    color: var(--dark-text);
-    padding: 2rem 0;
-    margin-top: 4rem;
-    border-top: 2px solid var(--brand-brass);
+// 8. ALERTS - Aged manuscript style
+.alert {
+    border-radius: 0.125rem;
+    border-left: 4px solid;
+    background: rgba(253, 245, 230, 0.9);
+
+    &.alert-info {
+        border-left-color: #B8860B;
+        background: rgba(184, 134, 11, 0.1);
+    }
+
+    &.alert-warning {
+        border-left-color: #CD853F;
+        background: rgba(205, 133, 63, 0.1);
+    }
+
+    &.alert-success {
+        border-left-color: #556B2F;
+        background: rgba(85, 107, 47, 0.1);
+    }
+
+    &.alert-danger {
+        border-left-color: #8B0000;
+        background: rgba(139, 0, 0, 0.1);
+    }
 }
 
-.footer-wrapper .container, .footer-wrapper-mfe .container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    flex-wrap: wrap;
+// 9. LINKS - Aged manuscript references
+a {
+    color: #B8860B;
+    transition: color 0.2s ease;
+
+    &:hover {
+        color: #8B4513;
+        text-decoration: underline;
+    }
 }
 
-.footer-nav a {
-    color: var(--dark-text);
-    text-decoration: none;
-    margin-right: 1.5rem;
-    opacity: 0.8;
-    transition: opacity 0.2s ease;
-}
+// 10. SPECIAL FLOURISHES - Decorative elements
+.decorative-flourish {
+    position: relative;
 
-.footer-nav a:hover {
-    opacity: 1;
-}
+    &::before,
+    &::after {
+        content: '❦';
+        position: absolute;
+        color: rgba(184, 134, 11, 0.3);
+        font-size: 1.2rem;
+    }
 
-.copyright {
-    opacity: 0.7;
-    font-size: 0.9rem;
+    &::before {
+        left: -2rem;
+    }
+
+    &::after {
+        right: -2rem;
+    }
 }
 
 // --- STYLES FOR GLOBAL HEADER & FOOTER ---
