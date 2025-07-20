@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Neuropharm Academy - Theme Demo</title>
+    <link rel="icon" href="favicon.ico">
+    
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;700&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    
+    <!-- Theme Styles -->
+    <style>
+        /* Import the theme variables and styles */
+        :root {
+            /* Light theme variables (default) */
+            --body-bg: #FDF5E6;
+            --body-color: #2F1B14;
+            --text-muted: #8B7355;
+            --border-color: #D4C5A9;
+            --shadow-color: rgba(47, 27, 20, 0.1);
+            --card-bg: #F5F5DC;
+            --logo-filter: none;
+        }
+
+        [data-theme="dim"] {
+            /* Dim theme variables */
+            --body-bg: #1C1611;
+            --body-color: #E6D7C3;
+            --text-muted: #A69B8A;
+            --border-color: #3D352A;
+            --shadow-color: rgba(0, 0, 0, 0.3);
+            --card-bg: #2A2318;
+            --logo-filter: brightness(0.9) contrast(1.1);
+        }
+
+        /* Apply theme variables to body */
+        body {
+            background-color: var(--body-bg);
+            color: var(--body-color);
+            font-family: 'Roboto', sans-serif;
+            background-image:
+                radial-gradient(circle at 20% 50%, rgba(184, 134, 11, 0.02) 0%, transparent 50%),
+                radial-gradient(circle at 80% 20%, rgba(139, 69, 19, 0.02) 0%, transparent 50%),
+                radial-gradient(circle at 40% 80%, rgba(107, 68, 35, 0.02) 0%, transparent 50%);
+            background-attachment: fixed;
+            letter-spacing: 0.3px;
+            transition: background-color 0.3s ease, color 0.3s ease;
+            min-height: 100vh;
+        }
+
+        /* Headings */
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Cormorant Garamond', serif;
+            color: var(--body-color);
+            text-shadow: 0 1px 2px var(--shadow-color);
+            transition: color 0.3s ease;
+            position: relative;
+        }
+
+        h1::after, h2::after, h3::after {
+            content: '';
+            position: absolute;
+            bottom: -4px;
+            left: 0;
+            width: 3rem;
+            height: 1px;
+            background: linear-gradient(90deg, #B8860B, transparent);
+        }
+
+        h1::after {
+            width: 4rem;
+            height: 2px;
+        }
+
+        /* Cards */
+        .card {
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
+            box-shadow: 0 2px 8px var(--shadow-color), inset 0 1px 0 rgba(255, 255, 255, 0.1);
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, rgba(184, 134, 11, 0.3), transparent);
+        }
+
+        .card-header {
+            background: linear-gradient(135deg, rgba(184, 134, 11, 0.1), rgba(139, 69, 19, 0.05));
+            border-bottom: 1px solid var(--border-color);
+            color: #8B4513;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+
+        /* Theme Toggle Button */
+        .theme-toggle {
+            background: transparent;
+            border: 1px solid var(--border-color);
+            color: var(--body-color);
+            padding: 0.5rem;
+            border-radius: 0.25rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-size: 1.2rem;
+        }
+
+        .theme-toggle:hover {
+            background: rgba(184, 134, 11, 0.1);
+            border-color: #B8860B;
+        }
+
+        .theme-toggle .icon-sun { display: none; }
+        .theme-toggle .icon-moon { display: inline; }
+
+        [data-theme="dim"] .theme-toggle .icon-sun { display: inline; }
+        [data-theme="dim"] .theme-toggle .icon-moon { display: none; }
+
+        /* Buttons */
+        .btn-primary {
+            background: linear-gradient(135deg, #B8860B 0%, #CD853F 100%);
+            border: 1px solid #B8860B;
+            color: #F5F5DC;
+            font-weight: 500;
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+            font-size: 0.875rem;
+            transition: all 0.2s ease;
+        }
+
+        .btn-primary:hover {
+            background: linear-gradient(135deg, #A0750A 0%, #B8860B 100%);
+            transform: translateY(-1px);
+            box-shadow: 0 4px 12px rgba(47, 27, 20, 0.2);
+        }
+
+        /* Links */
+        a {
+            color: #B8860B;
+            text-decoration: none;
+            transition: color 0.2s ease;
+        }
+
+        a:hover {
+            color: #8B4513;
+            text-decoration: underline;
+        }
+
+        /* Logo styling */
+        .logo {
+            filter: var(--logo-filter);
+            transition: filter 0.3s ease;
+            max-width: 50px;
+            height: auto;
+        }
+
+        /* Muted text */
+        .text-muted {
+            color: var(--text-muted) !important;
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg mb-4">
+        <div class="container">
+            <a class="navbar-brand d-flex align-items-center" href="#">
+                <img src="logo.svg" alt="Neuropharm Academy" class="logo me-2">
+                <span class="fw-bold">Neuropharm Academy</span>
+            </a>
+            
+            <div class="d-flex align-items-center">
+                <ul class="navbar-nav me-3">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#home">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#about">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#courses">Courses</a>
+                    </li>
+                </ul>
+                
+                <!-- Theme Toggle Button -->
+                <button class="theme-toggle" aria-label="Toggle dim mode" title="Toggle Light/Dim Mode">
+                    <span class="icon-sun">☀️</span>
+                    <span class="icon-moon">🌙</span>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <main class="container">
+        <div class="row">
+            <div class="col-12">
+                <h1 class="mb-4">Welcome to Neuropharm Academy</h1>
+                <p class="lead">Experience our elegant theme system with light and dim modes.</p>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-6 mb-4">
+                <div class="card">
+                    <div class="card-header">
+                        <h5 class="mb-0">Theme Features</h5>
+                    </div>
+                    <div class="card-body">
+                        <h6 class="card-title">Adaptive Design</h6>
+                        <p class="card-text">Our theme automatically adapts between light and dim modes based on your preference.</p>
+                        <ul class="list-unstyled">
+                            <li>✨ <strong>Light Mode:</strong> Classic parchment aesthetic</li>
+                            <li>🌙 <strong>Dim Mode:</strong> Comfortable low-light experience</li>
+                            <li>💾 <strong>Persistence:</strong> Your preference is saved</li>
+                        </ul>
+                        <button class="btn btn-primary">Learn More</button>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-md-6 mb-4">
+                <div class="card">
+                    <div class="card-header">
+                        <h5 class="mb-0">Theme Toggle Demo</h5>
+                    </div>
+                    <div class="card-body">
+                        <h6 class="card-title">Interactive Testing</h6>
+                        <p class="card-text">Click the theme toggle button in the navigation bar to switch between modes.</p>
+                        <p class="text-muted">The theme preference will be saved in your browser's localStorage and restored on your next visit.</p>
+                        <a href="#" class="card-link">Documentation</a>
+                        <a href="#" class="card-link">Source Code</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-12">
+                <h2>Typography Examples</h2>
+                <h3>Heading Level 3</h3>
+                <h4>Heading Level 4</h4>
+                <p>This is regular paragraph text that demonstrates how the theme affects readability in both light and dim modes. The colors are carefully chosen to provide optimal contrast and a comfortable reading experience.</p>
+                <p class="text-muted">This is muted text that shows secondary information with reduced emphasis.</p>
+            </div>
+        </div>
+
+        <div class="row mt-4">
+            <div class="col-12">
+                <h2>Current Theme Status</h2>
+                <div class="alert alert-info" role="alert">
+                    <strong>Active Theme:</strong> <span id="current-theme">Loading...</span><br>
+                    <strong>Storage Key:</strong> neuropharm-theme<br>
+                    <small class="text-muted">Theme changes are automatically persisted across browser sessions.</small>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="mt-5 py-4">
+        <div class="container">
+            <div class="row">
+                <div class="col-12 text-center">
+                    <p class="text-muted">&copy; 2024 Neuropharm Academy. All rights reserved.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <!-- Theme Toggle Script -->
+    <script>
+        /**
+         * Theme Toggle Functionality for Neuropharm Academy
+         * Handles light/dim mode switching with localStorage persistence
+         */
+        (function () {
+            'use strict';
+
+            // Theme management
+            const THEME_KEY = 'neuropharm-theme';
+            const LIGHT_THEME = 'light';
+            const DIM_THEME = 'dim';
+
+            // Get current theme from localStorage or system preference
+            function getCurrentTheme() {
+                const savedTheme = localStorage.getItem(THEME_KEY);
+                if (savedTheme) {
+                    return savedTheme;
+                }
+                return window.matchMedia('(prefers-color-scheme: dark)').matches ? DIM_THEME : LIGHT_THEME;
+            }
+
+            // Apply theme to document
+            function applyTheme(theme) {
+                document.documentElement.setAttribute('data-theme', theme);
+                localStorage.setItem(THEME_KEY, theme);
+                updateThemeStatus(theme);
+            }
+
+            // Update theme status display
+            function updateThemeStatus(theme) {
+                const statusElement = document.getElementById('current-theme');
+                if (statusElement) {
+                    statusElement.textContent = theme.charAt(0).toUpperCase() + theme.slice(1);
+                }
+            }
+
+            // Toggle theme
+            function toggleTheme() {
+                const currentTheme = getCurrentTheme();
+                const newTheme = currentTheme === LIGHT_THEME ? DIM_THEME : LIGHT_THEME;
+                applyTheme(newTheme);
+            }
+
+            // Initialize theme on page load
+            function initializeTheme() {
+                const theme = getCurrentTheme();
+                applyTheme(theme);
+
+                // Attach event listener to existing toggle button
+                const themeToggle = document.querySelector('.theme-toggle');
+                if (themeToggle) {
+                    themeToggle.addEventListener('click', toggleTheme);
+                }
+            }
+
+            // Listen for system theme changes
+            window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', (e) => {
+                if (!localStorage.getItem(THEME_KEY)) {
+                    applyTheme(e.matches ? DIM_THEME : LIGHT_THEME);
+                }
+            });
+
+            // Initialize when DOM is ready
+            if (document.readyState === 'loading') {
+                document.addEventListener('DOMContentLoaded', initializeTheme);
+            } else {
+                initializeTheme();
+            }
+
+            // Expose theme functions globally for external use
+            window.NeuropharmTheme = {
+                toggle: toggleTheme,
+                getCurrent: getCurrentTheme,
+                set: applyTheme
+            };
+        })();
+    </script>
+</body>
+</html>
