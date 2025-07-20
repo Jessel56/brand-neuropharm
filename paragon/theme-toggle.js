@@ -9,7 +9,7 @@
     // Theme management
     const THEME_KEY = 'neuropharm-theme';
     const LIGHT_THEME = 'light';
-    const DARK_THEME = 'dark';
+    const DIM_THEME = 'dim';
 
     // Get current theme from localStorage or system preference
     function getCurrentTheme() {
@@ -17,7 +17,7 @@
         if (savedTheme) {
             return savedTheme;
         }
-        return window.matchMedia('(prefers-color-scheme: dark)').matches ? DARK_THEME : LIGHT_THEME;
+        return window.matchMedia('(prefers-color-scheme: dark)').matches ? DIM_THEME : LIGHT_THEME;
     }
 
     // Apply theme to document
@@ -35,7 +35,7 @@
         logoContainers.forEach(container => {
             const logoImg = container.querySelector('img');
             if (logoImg) {
-                const logoSrc = theme === DARK_THEME ?
+                const logoSrc = theme === DIM_THEME ?
                     logoImg.src.replace('logo-light.svg', 'logo-dark.svg') :
                     logoImg.src.replace('logo-dark.svg', 'logo-light.svg');
                 logoImg.src = logoSrc;
@@ -46,7 +46,7 @@
     // Toggle theme
     function toggleTheme() {
         const currentTheme = getCurrentTheme();
-        const newTheme = currentTheme === LIGHT_THEME ? DARK_THEME : LIGHT_THEME;
+        const newTheme = currentTheme === LIGHT_THEME ? DIM_THEME : LIGHT_THEME;
         applyTheme(newTheme);
     }
 
@@ -54,7 +54,7 @@
     function createThemeToggle() {
         const toggleButton = document.createElement('button');
         toggleButton.className = 'theme-toggle';
-        toggleButton.setAttribute('aria-label', 'Toggle dark mode');
+        toggleButton.setAttribute('aria-label', 'Toggle dim mode');
         toggleButton.innerHTML = `
             <span class="icon-sun">☀️</span>
             <span class="icon-moon">🌙</span>
@@ -80,7 +80,7 @@
     // Listen for system theme changes
     window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', (e) => {
         if (!localStorage.getItem(THEME_KEY)) {
-            applyTheme(e.matches ? DARK_THEME : LIGHT_THEME);
+            applyTheme(e.matches ? DIM_THEME : LIGHT_THEME);
         }
     });
 

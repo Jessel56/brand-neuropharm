@@ -3,6 +3,8 @@ File: neuropharm/brand/paragon/_variables.scss
 Description: SASS variables for the MFE Brand Package.
 */
 
+@use "sass:color";
+
 // 1. FONT IMPORTS (must be in fonts.scss, but defining variables here)
 $font-family-sans-serif: 'Roboto', sans-serif;
 $headings-font-family: 'Cormorant Garamond', serif;
@@ -20,17 +22,36 @@ $dark: #493728; // Neuropharm Dark Brown
 
 // 3. BRAND-SPECIFIC COLORS
 $brand-primary: #C55A11; // Neuropharm Orange for primary actions
+$brand-brass: #B8860B; // Brass accent color
+$brand-mahogany: #8B4513; // Mahogany brown
+$brand-copper: #CD853F; // Copper accent
 
-// 4. BODY & TEXT
-$body-bg: $light;
-$body-color: $dark;
+// 4. LIGHT THEME COLORS
+$light-parchment: #FDF5E6; // Light parchment background
+$light-vellum: #F5F5DC; // Light vellum for cards
+$light-text: #2F1B14; // Dark text for light mode
+$light-muted: #8B7355; // Muted text for light mode
+$light-border: #D4C5A9; // Light border color
+$light-shadow: rgba(47, 27, 20, 0.1); // Light shadow
 
-// 5. HEADINGS
-$headings-color: $dark;
+// 5. DIM THEME COLORS
+$dim-background: #1C1611; // Dim background - dark but not black
+$dim-surface: #2A2318; // Slightly lighter surface for cards
+$dim-text: #E6D7C3; // Warm light text for dim mode
+$dim-muted: #A69B8A; // Muted text for dim mode  
+$dim-border: #3D352A; // Dim border color
+$dim-shadow: rgba(0, 0, 0, 0.3); // Dim shadow
+
+// 6. BODY & TEXT (Updated to use light theme variables)
+$body-bg: $light-parchment;
+$body-color: $light-text;
+
+// 7. HEADINGS
+$headings-color: $light-text;
 $headings-font-weight: 700;
 
-// 6. LINKS & BUTTONS
+// 8. LINKS & BUTTONS
 $link-color: $primary;
-$link-hover-color: darken($link-color, 15%);
+$link-hover-color: color.adjust($primary, $lightness: -15%);
 $btn-primary-bg: $brand-primary;
 $btn-primary-border: $brand-primary;

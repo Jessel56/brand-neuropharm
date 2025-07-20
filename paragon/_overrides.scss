@@ -5,7 +5,9 @@ Theme: Rich textures, brass accents, aged parchment feel
 Features: Responsive light and dark modes
 */
 
-// LIGHT/DARK MODE MIXIN
+@use 'variables' as *;
+
+// LIGHT/DIM MODE MIXIN
 @mixin theme-mode($mode: 'light') {
   @if $mode == 'light' {
     --body-bg: #{$light-parchment};
@@ -15,13 +17,13 @@ Features: Responsive light and dark modes
     --shadow-color: #{$light-shadow};
     --card-bg: #{$light-vellum};
     --logo-filter: none;
-  } @else if $mode == 'dark' {
-    --body-bg: #{$dark-library};
-    --body-color: #{$dark-text};
-    --text-muted: #{$dark-muted};
-    --border-color: #{$dark-border};
-    --shadow-color: #{$dark-shadow};
-    --card-bg: #{$dark-wood};
+  } @else if $mode == 'dim' {
+    --body-bg: #{$dim-background};
+    --body-color: #{$dim-text};
+    --text-muted: #{$dim-muted};
+    --border-color: #{$dim-border};
+    --shadow-color: #{$dim-shadow};
+    --card-bg: #{$dim-surface};
     --logo-filter: brightness(0.9) contrast(1.1);
   }
 }
@@ -31,16 +33,16 @@ Features: Responsive light and dark modes
   @include theme-mode('light');
 }
 
-// DARK MODE ACTIVATION
+// DIM MODE ACTIVATION
 @media (prefers-color-scheme: dark) {
   :root {
-    @include theme-mode('dark');
+    @include theme-mode('dim');
   }
 }
 
-// Manual dark mode override
-[data-theme="dark"] {
-  @include theme-mode('dark');
+// Manual theme overrides
+[data-theme="dim"] {
+  @include theme-mode('dim');
 }
 
 [data-theme="light"] {
@@ -222,16 +224,16 @@ h2::after {
         .logo-text { fill: #{$light-text}; }
     }
     
-    // Dark mode logo
-    [data-theme="dark"] & {
+    // Dim mode logo
+    [data-theme="dim"] & {
         .logo-primary { fill: #{$brand-brass}; }
         .logo-secondary { fill: #{$brand-copper}; }
-        .logo-accent { fill: #{$dark-text}; }
-        .logo-text { fill: #{$dark-text}; }
+        .logo-accent { fill: #{$dim-text}; }
+        .logo-text { fill: #{$dim-text}; }
     }
 }
 
-// 6. DARK MODE TOGGLE BUTTON
+// 6. THEME TOGGLE BUTTON
 .theme-toggle {
     background: transparent;
     border: 1px solid var(--border-color);
@@ -249,7 +251,7 @@ h2::after {
     .icon-sun { display: none; }
     .icon-moon { display: inline; }
     
-    [data-theme="dark"] & {
+    [data-theme="dim"] & {
         .icon-sun { display: inline; }
         .icon-moon { display: none; }
     }
