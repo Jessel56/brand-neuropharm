@@ -15,7 +15,15 @@ $light-muted: #8B4513;     // Lighter, saddle brown
 $light-border: #D2B48C;    // Tan border
 $light-shadow: rgba(47, 27, 20, 0.1);
 
-// 3. DARK MODE PALETTE ("Midnight Library")
+// 3. DIM MODE PALETTE ("Muted Parchment")
+$dim-parchment: #F0E8DB;   // Muted, warm background - softer than light
+$dim-vellum: #EDE4D3;      // Subtle card background
+$dim-text: #5D4A3A;        // Warm brown text - softer than light text
+$dim-muted: #8B6F47;       // Warmer muted color
+$dim-border: #C4A982;      // Softer border
+$dim-shadow: rgba(93, 74, 58, 0.12);
+
+// 4. DARK MODE PALETTE ("Midnight Library")
 $dark-library: #2F1B14;    // Deep, dark wood background
 $dark-wood: #493728;       // Card background, like a desk
 $dark-text: #EAE0D5;       // Off-white text, like ink on parchment
@@ -23,7 +31,7 @@ $dark-muted: #A0522D;      // Muted copper/sienna
 $dark-border: #5E4534;     // Darker border
 $dark-shadow: rgba(0, 0, 0, 0.3);
 
-// 4. BRAND ACCENTS ("Brass & Copper")
+// 5. BRAND ACCENTS ("Brass & Copper")
 $brand-brass: #B8860B;     // DarkGoldenRod
 $brand-copper: #CD853F;    // Peru
 $brand-mahogany: #8B0000;   // DarkRed
