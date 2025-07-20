@@ -15,6 +15,14 @@ Features: Responsive light and dark modes
     --shadow-color: #{$light-shadow};
     --card-bg: #{$light-vellum};
     --logo-filter: none;
+  } @else if $mode == 'dim' {
+    --body-bg: #{$dim-bg};
+    --body-color: #{$dim-text};
+    --text-muted: #{$dim-muted};
+    --border-color: #{$dim-border};
+    --shadow-color: #{$dim-shadow};
+    --card-bg: #{$dim-card};
+    --logo-filter: brightness(0.95) contrast(1.05);
   } @else if $mode == 'dark' {
     --body-bg: #{$dark-library};
     --body-color: #{$dark-text};
@@ -45,6 +53,10 @@ Features: Responsive light and dark modes
 
 [data-theme="light"] {
   @include theme-mode('light');
+}
+
+[data-theme="dim"] {
+  @include theme-mode('dim');
 }
 
 // 1. GLOBAL BODY STYLING - Adaptive parchment texture
@@ -222,6 +234,14 @@ h2::after {
         .logo-text { fill: #{$light-text}; }
     }
     
+    // Dim mode logo
+    [data-theme="dim"] & {
+        .logo-primary { fill: #{$brand-brass}; }
+        .logo-secondary { fill: #{$brand-mahogany}; }
+        .logo-accent { fill: #{$brand-copper}; }
+        .logo-text { fill: #{$dim-text}; }
+    }
+    
     // Dark mode logo
     [data-theme="dark"] & {
         .logo-primary { fill: #{$brand-brass}; }
@@ -231,7 +251,7 @@ h2::after {
     }
 }
 
-// 6. DARK MODE TOGGLE BUTTON
+// 6. THEME TOGGLE BUTTON - Three-state toggle
 .theme-toggle {
     background: transparent;
     border: 1px solid var(--border-color);
@@ -246,12 +266,30 @@ h2::after {
         border-color: #{$brand-brass};
     }
 
+    // Icons for three states
     .icon-sun { display: none; }
+    .icon-half-moon { display: none; }
     .icon-moon { display: inline; }
     
-    [data-theme="dark"] & {
+    // Light mode shows sun icon
+    [data-theme="light"] & {
         .icon-sun { display: inline; }
+        .icon-half-moon { display: none; }
         .icon-moon { display: none; }
+    }
+    
+    // Dim mode shows half-moon icon
+    [data-theme="dim"] & {
+        .icon-sun { display: none; }
+        .icon-half-moon { display: inline; }
+        .icon-moon { display: none; }
+    }
+    
+    // Dark mode shows moon icon
+    [data-theme="dark"] & {
+        .icon-sun { display: none; }
+        .icon-half-moon { display: none; }
+        .icon-moon { display: inline; }
     }
 }
 
