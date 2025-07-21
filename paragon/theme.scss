@@ -1,3 +1,35 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;700&family=Roboto:wght@400;700&display=swap');
+
+/*
+File: _variables.scss
+Description: Core SASS variables for the Neuropharm Academy theme.
+*/
+
+// 1. FONT VARIABLES
+$font-family-sans-serif: 'Roboto', sans-serif;
+$headings-font-family: 'Cormorant Garamond', serif;
+
+// 2. LIGHT MODE PALETTE ("Aged Parchment")
+$light-parchment: #FDF5E6; // Main background
+$light-vellum: #F5F5DC;    // Card background
+$light-text: #493728;      // Dark brown text
+$light-muted: #8B4513;     // Lighter, saddle brown
+$light-border: #D2B48C;    // Tan border
+$light-shadow: rgba(47, 27, 20, 0.1);
+
+// 3. DARK MODE PALETTE ("Midnight Library")
+$dark-library: #2F1B14;    // Deep, dark wood background
+$dark-wood: #493728;       // Card background, like a desk
+$dark-text: #EAE0D5;       // Off-white text, like ink on parchment
+$dark-muted: #A0522D;      // Muted copper/sienna
+$dark-border: #5E4534;     // Darker border
+$dark-shadow: rgba(0, 0, 0, 0.3);
+
+// 4. BRAND ACCENTS ("Brass & Copper")
+$brand-brass: #B8860B;     // DarkGoldenRod
+$brand-copper: #CD853F;    // Peru
+$brand-mahogany: #8B0000;   // DarkRed
+
 /*
 File: neuropharm/brand/paragon/_overrides.scss
 Description: Custom overrides for exclusive library aesthetic with light/dark mode support
@@ -60,7 +92,7 @@ body {
     transition: background-color 0.3s ease, color 0.3s ease;
 }
 
-// 2. HEADING STYLES - Elegant serif with brass accents
+// 2. HEADING STYLING - Elegant serif with brass accents
 h1,
 h2,
 h3,
