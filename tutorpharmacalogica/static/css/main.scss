@@ -1,0 +1,20 @@
+@import "../../indigo/static/css/main";
+
+body {
+  background: linear-gradient(135deg, #07e0c4, #40005c 90%);
+  color: #222;
+}
+.welcome-message {
+  text-align: center;
+  background: rgba(255,255,255,.8);
+  border-radius: 1.5em;
+  margin: 3em auto 2em;
+  padding: 2em 1em;
+  box-shadow: 0 5px 30px #40005c33;
+}
+.welcome-message h1 {
+  color: #40005c;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 2.8em;
+  margin-bottom: 0.2em;
+}

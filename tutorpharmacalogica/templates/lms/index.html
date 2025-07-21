@@ -1,0 +1,9 @@
+{% extends "indigo/lms/templates/index.html" %}
+{% block welcome_message %}
+  <section class="welcome-message">
+    <img src="{% static 'pharmacalogica/images/logo.svg' %}" alt="Pharmacalogica Logo" style="height:80px;margin-bottom:1em;">
+    <h1>Teaching Molecular Magic</h1>
+    <p>Welcome to NeuroPharm Academy’s advanced learning platform.</p>
+  </section>
+  {{ block.super }}
+{% endblock %}
