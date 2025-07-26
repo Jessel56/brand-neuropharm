@@ -1,0 +1,33 @@
+
+@import "palette";
+
+.btn-primary {
+  background: $brand-brass;
+  color: $light-parchment;
+  border: none;
+  border-radius: $border-radius-md;
+  font-weight: $font-weight-bold;
+  padding: $spacing-sm $spacing-lg;
+  transition: background $transition-fast, color $transition-fast;
+  &:hover, &:focus {
+    background: $brand-copper;
+    color: $dark-library;
+  }
+}
+
+.btn-secondary {
+  background: transparent;
+  color: $brand-brass;
+  border: 1px solid $brand-brass;
+  border-radius: $border-radius-md;
+  font-weight: $font-weight-bold;
+  padding: $spacing-sm $spacing-lg;
+  &:hover, &:focus {
+    background: $brand-brass;
+    color: $dark-library;
+  }
+}
+// Added missing color modes for harmony:
+$dark-wood: ;
+$dark-text: ;
+

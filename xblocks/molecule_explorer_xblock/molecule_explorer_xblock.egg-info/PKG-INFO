@@ -1,0 +1,5 @@
+Metadata-Version: 2.1
+Name: molecule_explorer_xblock
+Version: 1.0.0
+Requires-Dist: XBlock
+Requires-Dist: web-fragments

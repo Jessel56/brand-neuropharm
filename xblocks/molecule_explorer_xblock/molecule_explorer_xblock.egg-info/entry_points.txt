@@ -1,0 +1,2 @@
+[xblock.v1]
+molecule_explorer = molecule_explorer_xblock.molecule_explorer:MOLECULE_EXPLORERolecule_explorerXBlock

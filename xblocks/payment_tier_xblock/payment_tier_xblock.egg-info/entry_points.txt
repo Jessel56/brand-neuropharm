@@ -1,0 +1,2 @@
+[xblock.v1]
+payment_tier = payment_tier_xblock.payment_tier:PAYMENT_TIERayment_tierXBlock

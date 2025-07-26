@@ -1,0 +1,16 @@
+
+@import "palette";
+.book-slider {
+  display: flex; gap: $spacing-lg; overflow-x: auto; padding: $spacing-lg 0;
+  .book {
+    background: $brand-brass;
+    border: 4px solid $brand-copper;
+    border-radius: $border-radius-lg;
+    box-shadow: 0 4px 16px $dark-shadow;
+    min-width: 150px; max-width: 200px;
+    transition: transform $transition-fast, box-shadow $transition-fast;
+    &:hover { transform: scale(1.09) rotate(-2deg); box-shadow: 0 8px 36px $brand-copper;}
+    img { width: 100%; border-bottom: 2px solid $brand-copper;}
+    .book-info { padding: $spacing-sm; background: $dark-wood; color: $dark-text;}
+  }
+}

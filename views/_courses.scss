@@ -1,0 +1,38 @@
+
+.courses-view {
+  background: #23160c;
+  color: #EAE0D5;
+  border-radius: 10px;
+  .course-list-header {
+    background: #3b2411;
+    color: #b8860b;
+    border-bottom: 2px solid #b8860b;
+    padding: 1.5rem;
+  }
+  .course-card {
+    background: #422710;
+    border: 2px solid #b8860b;
+    border-radius: 8px;
+    color: #EAE0D5;
+    box-shadow: 0 0 8px #1a1006;
+    margin-bottom: 2rem;
+    padding: 1.5rem;
+    .course-title {
+      color: #b8860b;
+      font-size: 1.3rem;
+      font-weight: bold;
+      margin-bottom: 0.5em;
+    }
+    .course-meta {
+      color: #EAE0D5;
+      font-size: 1em;
+      margin-bottom: 0.5em;
+    }
+    .course-link {
+      color: #b8860b;
+      text-decoration: underline;
+      &:hover { color: #FDF5E66c2; }
+    }
+  }
+}
+

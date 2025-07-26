@@ -1,0 +1,19 @@
+
+.profile-view {
+  background: #2e1b0e;
+  color: #EAE0D5;
+  border-radius: 10px;
+  .profile-header {
+    background: #3b2411;
+    color: #b8860b;
+    border-bottom: 2px solid #b8860b;
+    padding: 1.5rem;
+  }
+  .profile-content {
+    background: #23160c;
+    border-radius: 8px;
+    padding: 2rem;
+    box-shadow: 0 0 10px #0008;
+  }
+}
+

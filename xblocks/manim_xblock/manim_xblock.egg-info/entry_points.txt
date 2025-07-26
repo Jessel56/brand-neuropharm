@@ -1,0 +1,2 @@
+[xblock.v1]
+manim = manim_xblock.manim:MANIManimXBlock

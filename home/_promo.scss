@@ -1,0 +1,33 @@
+
+.promo-section {
+  background: #23160c;
+  border: 2px solid #b8860b;
+  border-radius: 10px;
+  color: #EAE0D5;
+  padding: 2rem;
+  margin-bottom: 2rem;
+  .promo-title {
+    color: #b8860b;
+    font-family: 'Merriweather', serif;
+    font-size: 2rem;
+    margin-bottom: 1rem;
+  }
+  .promo-content {
+    color: #EAE0D5;
+    font-size: 1.2rem;
+  }
+  .promo-button {
+    background: #b8860b;
+    color: #3b2411;
+    border-radius: 6px;
+    padding: 0.75em 2em;
+    font-weight: 600;
+    border: none;
+    margin-top: 1em;
+    &:hover {
+      background: #EAE0D5;
+      color: #3b2411;
+    }
+  }
+}
+

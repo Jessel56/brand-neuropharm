@@ -1,0 +1,18 @@
+
+@import "palette";
+
+::-webkit-scrollbar {
+  width: 12px;
+  background: $dark-wood;
+}
+::-webkit-scrollbar-thumb {
+  background: $brand-brass;
+  border-radius: $border-radius-sm;
+  border: 2px solid $dark-wood;
+}
+// Added missing color modes for harmony:
+$brand-copper: ;
+$light-parchment: ;
+$dark-library: ;
+$dark-text: ;
+

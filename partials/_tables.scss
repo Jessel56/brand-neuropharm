@@ -1,0 +1,25 @@
+
+@import "palette";
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  background: $dark-wood;
+  color: $dark-text;
+  th, td {
+    border: 1px solid $dark-border;
+    padding: $spacing-sm $spacing-md;
+  }
+  th {
+    background: $brand-brass;
+    color: $dark-library;
+    font-weight: $font-weight-bold;
+  }
+  tr:nth-child(even) {
+    background: lighten($dark-wood, 5%);
+  }
+}
+// Added missing color modes for harmony:
+$brand-copper: ;
+$light-parchment: ;
+

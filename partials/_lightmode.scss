@@ -1,0 +1,39 @@
+
+@import "palette";
+
+body.light-mode {
+  background: $light-parchment;
+  color: $light-text;
+}
+
+body.light-mode h1, body.light-mode h2, body.light-mode h3 {
+  color: $brand-mahogany;
+}
+
+body.light-mode .card {
+  background: $light-vellum;
+  color: $light-text;
+  border: 1px solid $light-border;
+  box-shadow: 0 2px 10px $light-shadow;
+}
+
+body.light-mode .btn {
+  background: $brand-mahogany;
+  color: $light-parchment;
+  &:hover, &:focus {
+    background: $brand-brass;
+    color: $light-text;
+  }
+}
+
+body.light-mode input, body.light-mode select, body.light-mode textarea {
+  background: $light-vellum;
+  color: $light-text;
+  border: 1px solid $light-border;
+}
+// Added missing color modes for harmony:
+$dark-wood: ;
+$brand-copper: ;
+$dark-library: ;
+$dark-text: ;
+

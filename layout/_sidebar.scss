@@ -1,0 +1,23 @@
+
+@import "palette";
+
+.sidebar {
+  background: $dark-wood;
+  color: $dark-text;
+  border-right: 2px solid $brand-brass;
+  min-width: 220px;
+  padding: $spacing-lg $spacing-md;
+  .sidebar-link {
+    color: $brand-copper;
+    display: block;
+    padding: $spacing-sm 0;
+    font-weight: $font-weight-bold;
+    &:hover, &:focus {
+      color: $brand-brass;
+    }
+  }
+}
+// Added missing color modes for harmony:
+$light-parchment: ;
+$dark-library: ;
+

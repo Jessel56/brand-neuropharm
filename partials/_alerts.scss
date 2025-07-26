@@ -1,0 +1,29 @@
+
+@import "palette";
+
+.alert {
+  border-radius: $border-radius-sm;
+  padding: $spacing-md;
+  margin-bottom: $spacing-lg;
+  font-weight: $font-weight-bold;
+  &.alert-info {
+    background: lighten($dark-muted, 20%);
+    color: $dark-library;
+    border-left: 4px solid $brand-brass;
+  }
+  &.alert-warning {
+    background: lighten($brand-mahogany, 30%);
+    color: $dark-library;
+    border-left: 4px solid $brand-copper;
+  }
+  &.alert-success {
+    background: lighten($brand-brass, 40%);
+    color: $dark-library;
+    border-left: 4px solid $brand-brass;
+  }
+}
+// Added missing color modes for harmony:
+$dark-wood: ;
+$light-parchment: ;
+$dark-text: ;
+

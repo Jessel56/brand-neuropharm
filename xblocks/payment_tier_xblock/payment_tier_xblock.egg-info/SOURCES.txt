@@ -1,0 +1,11 @@
+MANIFEST.in
+README.md
+setup.py
+payment_tier_xblock/__init__.py
+payment_tier_xblock/payment_tier_xblock.py
+payment_tier_xblock.egg-info/PKG-INFO
+payment_tier_xblock.egg-info/SOURCES.txt
+payment_tier_xblock.egg-info/dependency_links.txt
+payment_tier_xblock.egg-info/entry_points.txt
+payment_tier_xblock.egg-info/requires.txt
+payment_tier_xblock.egg-info/top_level.txt
